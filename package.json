@@ -1,34 +1,39 @@
 {
-  "name": "express-type-orm",
-  "version": "1.0.0",
-  "description": "",
+  "name": "fastify-typescipt-starter",
+  "version": "0.0.1",
+  "description": "Fastify Typescipt Starter",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "tsc-watch --onSuccess  \"nodemon src/app.ts\""
+    "dev": "ts-node-dev --log-error --files ./src/server.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "NODE_ENV=production node dist/server.js",
+    "test": "jest"
   },
-  "author": "Hafiz Usman",
+  "author": "Inian",
   "license": "ISC",
+  "engines": {
+    "node": ">= 12.0.0"
+  },
   "dependencies": {
-    "body-parser": "^1.20.1",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2",
-    "fastify": "^4.11.0",
-    "fastify-plugin": "^4.4.0",
-    "mysql2": "^2.3.3",
-    "pg": "^8.8.0",
-    "reflect-metadata": "^0.1.13",
-    "sequelize": "^6.28.0",
-    "sequelize-typescript": "^2.1.5",
-    "typeorm": "^0.3.11"
+    "dotenv": "^8.2.0",
+    "fastify": "^3.14.0",
+    "fastify-autoload": "^3.5.2",
+    "fastify-swagger": "^4.4.1"
   },
   "devDependencies": {
-    "@types/express": "^4.17.15",
-    "@types/node": "^18.11.18",
-    "@types/validator": "^13.7.10",
-    "nodemon": "^2.0.20",
-    "ts-node-dev": "^2.0.0",
-    "tsc-watch": "^6.0.0",
-    "typescript": "^4.9.4"
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.33",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
+    "eslint": "^7.21.0",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "jest": "^26.6.3",
+    "json-schema-to-ts": "^1.6.0",
+    "pino-pretty": "^4.7.1",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.3",
+    "ts-node-dev": "^1.1.6",
+    "typescript": "^4.2.3"
   }
 }
