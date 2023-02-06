@@ -1,0 +1,21 @@
+services:
+  adminer-nest-app:
+    image: adminer
+    container_name: adminer-nest-app
+    restart: always
+    ports:
+      - ${ADMINER_PORT}:8080
+  db-postgres-nest-app:
+    image: postgres:14.4
+    container_name: db-postgres-nest-app
+    restart: always
+    ports:
+      - ${POSTGRES_PORT}:5432
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}
+    volumes:
+      - db-postgres-local:/var/lib/postgresql/data
+volumes:
+  db-postgres-local:
