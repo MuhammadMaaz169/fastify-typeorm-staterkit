@@ -16,6 +16,7 @@ const build = (opts: buildOpts = {}): FastifyInstance => {
     app.register(fastifySwagger, {
       exposeRoute: true,
       swagger: {
+        host: 'localhost',
         info: {
           title: "Fastify Typescript Starter API",
           version: "0.0.1",
